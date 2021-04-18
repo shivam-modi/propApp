@@ -26,7 +26,7 @@ export default function SignIn() {
             passwordRef.current.value,
           )
           setLoading(false);
-          Router.push("/newproperty"); 
+          Router.replace("/newproperty"); 
         } catch {
           setLoading(false);
           setError("Account credentials doesn't match");

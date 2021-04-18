@@ -17,7 +17,7 @@ let firebaseApp, db, auth, storage;
 
 if(!firebase.apps.length){
  firebaseApp = firebase.initializeApp(config);
- db = firebaseApp.firestore();
+ db = firebaseApp.firestore()
  auth = firebaseApp.auth();
  storage = firebaseApp.storage();
 }

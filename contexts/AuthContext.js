@@ -16,7 +16,7 @@ export function AuthProvider({children}) {
     }
 
     function reauthenticate(password){
-      var user = firebase.auth().currentUser
+      var user = auth.currentUser
       console.log(user, currentUser)
       var cred = firebase.auth.EmailAuthProvider.credential(
         currentUser.email,
@@ -89,9 +89,6 @@ export function AuthProvider({children}) {
     }
 
      function createUser({ email, phone, uid }) {
-       db.settings({
-         timestampsInSnapshots: true,
-       });
        var timestamp = firebase.firestore.Timestamp.fromDate(new Date());
        return db
          .collection("users")

@@ -46,11 +46,11 @@ export default function Signup() {
           });
         await linkPhone(contactRef.current.value);
         setLoading(false);
+        Router.replace("/new/property");  
       } catch (error) {
         setLoading(false);
         setError(error.message);
       }      
-      Router.push("/new/property");  
   }
 
   return (
