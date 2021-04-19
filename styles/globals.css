@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 :root {
-  --primaryColor: rgb(161, 121, 75);
+  --primaryColor: rgb(204, 154, 97);
+  --iconColor: #BD7F37FF;
   --mainWhite: #fff;
   --offWhite: #f7f7f7;
   --mainBlack: #222;
@@ -255,7 +256,7 @@ h6 {
 }
 .service span {
   display: inline-block;
-  color: var(--primaryColor);
+  color: var(--iconColor);
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
 }
@@ -269,7 +270,7 @@ h6 {
 }
 
 .service > svg > path {
-  stroke: var(--primaryColor) !important;
+  stroke: var(--iconColor) !important;
 }
 
 @media screen and (min-width: 992px) {
@@ -477,6 +478,9 @@ h6 {
     width: 90vw;
   }
 }
+.filter-container {
+  padding: 5rem 0;
+}
 @media screen and (min-width: 992px) {
   .roomslist-center {
     width: 95vw;
@@ -485,9 +489,7 @@ h6 {
 }
 /* end of roomlist */
 /*  rooms fitler*/
-.filter-container {
-  padding: 5rem 0;
-}
+
 .filter-form {
   width: 60vw;
   margin: 0 auto;
@@ -736,9 +738,9 @@ footer .social-icon li .soc:hover {
   }
  #imp{
    text-decoration:none;
-   color: #BD7F37FF;
-   background-color: #BD7F37FF;
-   border: 5px solid #BD7F37FF;
+   color: var(--iconColor);
+   background-color: var(--iconColor);
+   border: 5px solid var(--iconColor);
    border-radius:5px;
    color:#fff;
    margin-right:10px;
@@ -862,5 +864,5 @@ footer .social-icon li .soc:hover {
     border-color: darkgray;
 }
 .manag > path{
-  stroke: var(--primaryColor);
+  stroke: var(--iconColor);
 }
