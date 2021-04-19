@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react'
 import Link from "next/link";
-import Router from "next/router"
-// import {useHistory} from "react-router-dom"
+import {useRouter} from "next/router"
+import Loading from "../components/Loading"
 import {v4 as uuidV4} from "uuid"
 import { Card, Button, Form, Container, Alert } from "react-bootstrap";
 import imp from "../public/assets/imp.webp";
@@ -15,10 +15,13 @@ export default function Signup() {
   const contactRef = useRef("")
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('')
-  const [code, setCode] = useState('')
   const {signup, linkPhone, createUser} =  useAuth()
-  // const history = useHistory()
   let userId = uuidV4();
+  const router = useRouter()
+
+  // if(currentUser){
+  //   router.replace('/dashboard');
+  // }
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -35,24 +38,32 @@ export default function Signup() {
           .catch((e) => {
             return setError(e.message);
           });
+
         await createUser({
           email: emailRef.current.value,
           phone: contactRef.current.value,
           uid: userId,
         })
-          .then((res) => console.log(res))
+          .then((res) => {
+           
+          })
           .catch((e) => {
             return setError(e.message);
           });
-        await linkPhone(contactRef.current.value);
-        setLoading(false);
-        Router.replace("/new/property");  
+         
+        await linkPhone(contactRef.current.value)
+          .then((res) => {
+             setLoading(false);
+             router.replace("/newproperty");
+          })
+          .catch((e) => setError(e.message));
+
       } catch (error) {
         setLoading(false);
         setError(error.message);
       }      
   }
-
+   
   return (
     <main>
       <Head>
@@ -69,6 +80,7 @@ export default function Signup() {
           content="sign up, signup,  agent, realtor, real estate agent, create account, post property, property, real estate, sell, rent, lease, shops, flat, floor, home, house, keys,  dream house, modi, properties"
         />
       </Head>
+      {/* { !currentUser ?  */}
       <Container
         className="d-flex align-items-center justify-content-center"
         style={{ minHeight: "100vh" }}
@@ -132,6 +144,9 @@ export default function Signup() {
           </div>
         </div>
       </Container>
+        {/* : 
+        <Loading/> 
+     } */}
     </main>
   );
 }

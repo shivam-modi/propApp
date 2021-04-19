@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Router from 'next/router'
+import {useRouter} from 'next/router'
 import React, { useEffect, useState } from 'react'
 import { Card, Container, Button, Alert } from 'react-bootstrap'
 import Loading from '../components/Loading'
@@ -17,9 +17,10 @@ const Dashboard = ({context}) => {
     const [error, setError] = useState("")
     const [properties,setProperties] = useState([]);
     const [userId, setUserId] = useState("");
-    
+    const router = useRouter()
+
     if(!currentUser){
-      Router.replace("/signin") 
+      router.replace("/signin") 
     }
     
     const userPropertiesFetch = async (id) => {
@@ -67,7 +68,7 @@ const Dashboard = ({context}) => {
       setError("");
       try {
         await logOut();
-       Router.replace("/signin");
+        router.replace("/signin");
       } catch {
         setError("Failed to log out");
       }

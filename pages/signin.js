@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import Link from "next/link";
 // import {useHistory} from "react-router-dom";
-import Router from 'next/router'
+import {useRouter} from 'next/router'
 import loading from "../public/assets/giphy.gif";
 import imp from "../public/assets/imp.webp";
 import { Form, Button, Card, Container, Alert } from "react-bootstrap";
@@ -14,10 +14,10 @@ export default function SignIn() {
       const [loading, setLoading] = useState(false);
       const [error, setError] = useState("");
       const { login, getUser } = useAuth();
+      const router = useRouter()
 
       async function handleSubmit(e) {
         e.preventDefault();
-        let userId;
         try {
           setError("");
           setLoading(true);
@@ -26,7 +26,7 @@ export default function SignIn() {
             passwordRef.current.value,
           )
           setLoading(false);
-          Router.replace("/newproperty"); 
+          router.replace("/newproperty"); 
         } catch {
           setLoading(false);
           setError("Account credentials doesn't match");

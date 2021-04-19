@@ -12,9 +12,9 @@ function ResponseBox({ propertyId, uploaderId }) {
   const [Message, setMessage] = useState("");
   const [token, setToken] = useState("");
   const [error, setError] = useState('')
-
+  const url = process.env.NEXT_PUBLIC_BACKEND_URL;
   const handleRecaptcha = async () => {
-    const response = await fetch("/api/verify", {
+    const response = await fetch(`${url}verify`, {
       method: "POST",
       headers: {
         'Content-type': 'application/json' 
@@ -28,7 +28,7 @@ function ResponseBox({ propertyId, uploaderId }) {
   };
  
   const sendMail = async (data) => {
-    const response = await fetch("/api/email/send", {
+    const response = await fetch(`${url}email/send`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -38,13 +38,14 @@ function ResponseBox({ propertyId, uploaderId }) {
         ...data
       }),
     });
-    // const result = await response.json()
+    const result = await response.json()
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if(Email !== '' && Contact !== '' && Message !== '' && Name !== ''){
       const response = await handleRecaptcha();
+      console.log(response)
       setError("");
       const data = {
         name: Name,

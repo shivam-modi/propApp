@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import Link from 'next/link'
-import Router, {useRouter} from 'next/router'
+import {useRouter} from 'next/router'
 import { Card, Button, Form, Container, Alert } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
 import Loading from "../components/Loading"
@@ -26,7 +26,7 @@ export default function UpdateProfile() {
    const userId = router.query.userId;
    
    if(!currentUser){
-     Router.replace('/signin')
+     router.replace('/signin')
    }
 
    function handleSubmit(e) {
@@ -71,7 +71,7 @@ export default function UpdateProfile() {
          }).catch(err => setError(err.message))
       }
         
-      //  Router.push("/dashboard");    
+       router.push("/dashboard");    
     } catch (error) {
       setError(error.message)
     } 
@@ -183,7 +183,7 @@ export default function UpdateProfile() {
                </Card.Body>
              </Card>
              <div className="w-100 text-center mt-2">
-               <Link href="/dashboard">Cancel</Link>
+               <Link href="/dashboard"><a>Cancel</a></Link>
              </div>
            </div>
          </Container>

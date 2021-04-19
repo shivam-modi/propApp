@@ -5,7 +5,7 @@ import imp from "../public/assets/imp.webp";
 import { Form, Button, Card, Container, Alert } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
 import Head from "next/head";
-import Router from "next/router";
+import {useRouter} from "next/router";
 
 
 export default function ForgetPassword() {
@@ -15,9 +15,10 @@ export default function ForgetPassword() {
       const { resetPassword } = useAuth();
       const [message, setMessage] = useState("");
       const {currentUser} = useAuth()
+      const router = useRouter()
 
       if(currentUser){
-        Router.replace('/dashboard')
+        router.replace('/dashboard')
       }
 
       async function handleSubmit(e) {

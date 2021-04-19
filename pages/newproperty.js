@@ -8,7 +8,7 @@ import PropertyFeatures from "../components/PropertyFeatures";
 import AreaAndTransaction from "../components/AreaAndTransaction";
 import { useAuth } from "../contexts/AuthContext";
 import { Button, Form, Container, Card, Alert } from "react-bootstrap";
-import Router from "next/router";
+import { useRouter } from "next/router";
 import PropertyAddress from "../components/PropertyAddress";
 import { withPropertyConsumer } from "../contexts/PropertyContext";
 import { v4 as uuidV4 } from "uuid";
@@ -52,7 +52,7 @@ const NewProperty = ({ context }) => {
   const [Security, setSecurity] = useState(false);
   const [ModularKitchen, setModularKitchen] = useState(false);
   const [ImagesUrl, setImagesUrl] = useState([]);
-  //const location = useLocation()
+  // const location = useLocation()
   // const userId = location.state.userId
   const { currentUser, getUser } = useAuth();
   const { uploadProperty, deleteImageUsingUrl } = context;
@@ -69,10 +69,10 @@ const NewProperty = ({ context }) => {
     "Penthouse",
     "Shop",
   ];
-   
+  const router = useRouter() 
+
   if(!currentUser){
-    Router.replace("/signin");
-    return <Loading/>
+    router.replace("/signin");
   } 
 
   const handleChange = (e) => {
@@ -85,7 +85,7 @@ const NewProperty = ({ context }) => {
   const handleUpload = async (image) => {
     // setLoading(true);)
     const uploadTask = storage
-      .ref(`images/${iid.substr(0, 6)}${image.name}`)
+      .ref(`images/${iid.substr(0, 7)}${image.name}`)
       .put(image);
     uploadTask.on(
       "state_changed",
@@ -108,7 +108,7 @@ const NewProperty = ({ context }) => {
             imageUrlLinks.push(url);
             setImagesUrl(imageUrlLinks);
           })
-          .catch((e) => setError(error.message));
+          .catch((e) => setError(e.message));
       }
     );
     // setLoading(false);
