@@ -23,7 +23,7 @@ export default function Home() {
     return (
       <main>
         <Head>
-          <title>LK Modi Properties/ Home | Sale Rent Lease</title>
+          <title>XYZ Properties/ Home | Sale Rent Lease</title>
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0"

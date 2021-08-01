@@ -18,7 +18,8 @@ export function Navbar() {
               <div className="nav-header">
                 <Link href="/">
                   <img
-                    src={logo1}
+                  /*  src={logo1}*/
+                  src="http://www.flyermakerpro.com/_mobile/images/placeholder_logo.jpg"
                     className="lnk logoimg"
                     alt="Modi Properties"
                   />

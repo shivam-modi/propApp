@@ -17,8 +17,8 @@ function Footer() {
                 </div>
                 <div className="col-lg-4">
                   <div className="phone-no">
-                    <a href="tel:+919811444541" className="wdt">
-                      <FaMobile></FaMobile>Call +91-9811444541
+                    <a href="tel:+919811XXXXXX" className="wdt">
+                      <FaMobile></FaMobile>Call +91-9811XXXXX
                     </a>
                   </div>
                 </div>
@@ -42,16 +42,17 @@ function Footer() {
                   <li>
                     <FaMapMarkerAlt className="ico"></FaMapMarkerAlt>{" "}
                     <a href="https://goo.gl/maps/yhTzyP5PSmxSswP9A">
-                      B-213, Rama Park, Mohan Garden, New Delhi-59
+                      {/* B-213, Rama Park, Mohan Garden, New Delhi-59 */}
+                      Lorem ipsum, dolor sit amet consectetur adipisicing.
                     </a>
                   </li>
                   <li>
                     <FaEnvelope className="ico" id="envo"></FaEnvelope>{" "}
-                    <a href="mailto:lkmodi28@gmail.com">lkmodi28@gmail.com</a>
+                    <a href="mailto:lkmodi28@gmail.com">blabla28@gmail.com</a>
                   </li>
                   <li>
                     <FaMobileAlt className="ico"></FaMobileAlt>{" "}
-                    <a href="tel:+919811444541">9811444541</a>
+                    <a href="tel:+919811444541">98114XXXXX</a>
                   </li>
                 </ul>
               </div>
