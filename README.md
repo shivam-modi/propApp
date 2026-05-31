@@ -1,37 +1,88 @@
-## Live Sample 
-[modi-properties](https://modi-properties.web.app/)
+# Modi Properties
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+A modern property listing web application built with Next.js and Firebase.
 
-## Getting Started
+## 🌐 Live Sample
+[modi-properties.web.app](https://modi-properties.web.app/)
 
-First, run the development server:
+## 📋 About
+This is a Next.js application that allows users to browse and manage property listings. It features a responsive design using Bootstrap and React Bootstrap, with Firebase as the backend for authentication and data storage.
 
+## 🛠️ Tech Stack
+- **Framework:** [Next.js](https://nextjs.org/) 16.1.5
+- **Frontend:** React 17 with [React Bootstrap](https://react-bootstrap.github.io/)
+- **Styling:** styled-components & Bootstrap 5
+- **Backend:** Firebase & Firebase Admin
+- **Email:** Nodemailer
+- **Security:** Google reCAPTCHA
+- **Icons:** React Icons
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js and npm/yarn installed
+- Firebase project configured
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+
+### Development
+Run the development server:
 ```bash
 npm run dev
 # or
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application runs on [http://localhost:7834](http://localhost:7834) (custom port configured).
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Build & Deploy
+```bash
+npm run build      # Build for production
+npm start          # Start production server
+npm run export     # Export static site
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## 📁 Project Structure
+- `pages/` - Next.js pages and routes
+- `pages/api/` - API routes (backend endpoints)
+- `components/` - Reusable React components
+- `public/` - Static assets
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## 📧 Features
+- Property listings with search functionality
+- User authentication via Firebase
+- Email notifications using Nodemailer
+- reCAPTCHA integration for form protection
+- Responsive design for mobile and desktop
+- Icon library with React Icons
 
-## Learn More
+## 📚 Learn More
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Firebase Documentation](https://firebase.google.com/docs)
+- [React Bootstrap Documentation](https://react-bootstrap.github.io/)
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Deploy on Vercel
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com):
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Push your code to GitHub
+2. Import the repository on Vercel
+3. Configure environment variables
+4. Deploy!
 
-## Deploy on Vercel
+Check out [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📄 License
+This project is licensed under the MIT License.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 👤 Author
+[shivam-modi](https://github.com/shivam-modi)
